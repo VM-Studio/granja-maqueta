@@ -9,7 +9,7 @@ export default function Hero() {
       <div className="absolute bottom-0 left-0 w-64 h-64 sm:w-96 sm:h-96 bg-[#ee920f]/5 rounded-full blur-3xl"></div>
       
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
           {/* Text Content */}
           <div className="space-y-6 sm:space-y-8 text-center lg:text-left">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-[#2f1f1c] leading-[1.1] tracking-tight">
@@ -48,14 +48,14 @@ export default function Hero() {
           </div>
 
           {/* Visual Card - Modern Design */}
-          <div className="relative hidden md:block md:mt-8 lg:-mt-16">
+          <div className="relative mt-8 lg:-mt-16">
             {/* Floating decoration */}
-            <div className="absolute -top-4 -right-4 w-24 h-24 bg-[#ee920f] rounded-3xl rotate-12 opacity-20 blur-xl"></div>
-            <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-[#d68310] rounded-3xl -rotate-12 opacity-20 blur-xl"></div>
+            <div className="absolute -top-4 -right-4 w-20 h-20 sm:w-24 sm:h-24 bg-[#ee920f] rounded-3xl rotate-12 opacity-20 blur-xl"></div>
+            <div className="absolute -bottom-4 -left-4 w-24 h-24 sm:w-32 sm:h-32 bg-[#d68310] rounded-3xl -rotate-12 opacity-20 blur-xl"></div>
             
-            <div className="relative bg-white rounded-3xl p-6 lg:p-8 shadow-2xl border border-gray-100 overflow-hidden">
+            <div className="relative bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-2xl border border-gray-100 overflow-hidden">
               {/* Sello decorativo */}
-              <div className="absolute top-1/2 -translate-y-1/2 right-8 lg:right-16 w-28 h-28 lg:w-36 lg:h-36 z-0 opacity-90">
+              <div className="absolute top-1/2 -translate-y-1/2 right-4 sm:right-8 lg:right-16 w-24 h-24 sm:w-28 sm:h-28 lg:w-36 lg:h-36 z-0 opacity-90">
                 <Image
                   src="/sello.png"
                   alt="Sello Granja"
@@ -65,23 +65,23 @@ export default function Hero() {
                 />
               </div>
               
-              <div className="space-y-6 relative z-10">
+              <div className="space-y-4 sm:space-y-6 relative z-10">
                 {[
                   { icon: "M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z", title: "Reparto a Domicilio", desc: "En todo el barrio" },
                   { icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z", title: "Entrega Rápida", desc: "Productos frescos" },
                   { icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z", title: "Calidad Garantizada", desc: "Negocio familiar" }
                 ].map((item, i) => (
-                  <div key={i} className="group flex items-center gap-4 p-4 rounded-2xl hover:bg-orange-50 transition-all cursor-pointer">
-                    <div className="bg-gradient-to-br from-[#ee920f] to-[#d68310] p-4 rounded-2xl shadow-lg group-hover:scale-110 transition-transform">
-                      <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div key={i} className="group flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl sm:rounded-2xl hover:bg-orange-50 transition-all cursor-pointer">
+                    <div className="bg-gradient-to-br from-[#ee920f] to-[#d68310] p-3 sm:p-4 rounded-xl sm:rounded-2xl shadow-lg group-hover:scale-110 transition-transform">
+                      <svg className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={item.icon} />
                       </svg>
                     </div>
                     <div className="flex-1">
-                      <p className="font-bold text-[#2f1f1c] text-lg mb-1">{item.title}</p>
-                      <p className="text-gray-600">{item.desc}</p>
+                      <p className="font-bold text-[#2f1f1c] text-base sm:text-lg mb-0.5 sm:mb-1">{item.title}</p>
+                      <p className="text-gray-600 text-sm sm:text-base">{item.desc}</p>
                     </div>
-                    <svg className="w-5 h-5 text-[#ee920f] opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-4 h-4 sm:w-5 sm:h-5 text-[#ee920f] opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
                   </div>

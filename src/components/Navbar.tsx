@@ -1,7 +1,12 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function Navbar() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
     <nav className="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-xl border-b border-gray-100 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -68,13 +73,63 @@ export default function Navbar() {
 
           {/* Mobile menu button */}
           <div className="lg:hidden">
-            <button className="text-[#2f1f1c] hover:text-[#ee920f] p-2 rounded-xl hover:bg-orange-50 transition-all">
+            <button 
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="text-[#2f1f1c] hover:text-[#ee920f] p-2 rounded-xl hover:bg-orange-50 transition-all"
+            >
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                {mobileMenuOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                )}
               </svg>
             </button>
           </div>
         </div>
+
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="lg:hidden border-t border-gray-100 bg-white/95 backdrop-blur-xl">
+            <div className="px-4 py-4 space-y-2">
+              <Link 
+                href="#inicio" 
+                onClick={() => setMobileMenuOpen(false)}
+                className="block text-[#2f1f1c] hover:text-[#ee920f] hover:bg-orange-50 transition-all font-medium px-4 py-3 rounded-xl"
+              >
+                Inicio
+              </Link>
+              <Link 
+                href="#productos" 
+                onClick={() => setMobileMenuOpen(false)}
+                className="block text-[#2f1f1c] hover:text-[#ee920f] hover:bg-orange-50 transition-all font-medium px-4 py-3 rounded-xl"
+              >
+                Productos
+              </Link>
+              <Link 
+                href="#reparto" 
+                onClick={() => setMobileMenuOpen(false)}
+                className="block text-[#2f1f1c] hover:text-[#ee920f] hover:bg-orange-50 transition-all font-medium px-4 py-3 rounded-xl"
+              >
+                Reparto
+              </Link>
+              <Link 
+                href="#contacto" 
+                onClick={() => setMobileMenuOpen(false)}
+                className="block text-[#2f1f1c] hover:text-[#ee920f] hover:bg-orange-50 transition-all font-medium px-4 py-3 rounded-xl"
+              >
+                Contacto
+              </Link>
+              <Link 
+                href="#contacto"
+                onClick={() => setMobileMenuOpen(false)}
+                className="block bg-gradient-to-r from-[#ee920f] to-[#d68310] text-white px-6 py-3 rounded-2xl font-semibold text-center shadow-lg mt-4"
+              >
+                Pedí Ahora
+              </Link>
+            </div>
+          </div>
+        )}
       </div>
     </nav>
   );

@@ -48,7 +48,7 @@ export default function Hero() {
           </div>
 
           {/* Visual Card - Modern Design */}
-          <div className="relative hidden lg:block lg:-mt-16">
+          <div className="relative hidden md:block md:mt-8 lg:-mt-16">
             {/* Floating decoration */}
             <div className="absolute -top-4 -right-4 w-24 h-24 bg-[#ee920f] rounded-3xl rotate-12 opacity-20 blur-xl"></div>
             <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-[#d68310] rounded-3xl -rotate-12 opacity-20 blur-xl"></div>
